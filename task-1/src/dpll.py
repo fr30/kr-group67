@@ -99,32 +99,24 @@ class DPLL(ABC):
             cnf.clauses.remove(clause)
 
     def fix_clauses(self, cnf: CNFClauseSet) -> None:
-        # print("=====Fixing clauses=====")
-        # print(cnf)
-        # print(self.model)
         toremove = []
         for clause in cnf.clauses:
             for literal in clause:
                 # If undetermined, skip
                 if abs(literal) not in self.model:
                     continue
-                # print(literal, self.istrue_literal(literal), self.model)
                 # Remove clause if literal is true
                 if self.istrue_literal(literal):
                     toremove.append(clause)
                     break
                 # Shorten clause if literal is false
                 else:
-                    # print("Removing literal", literal, clause)
                     clause.remove(literal)
 
         toremove.sort()
         toremove = list(k for k, _ in itertools.groupby(toremove))
         for clause in toremove:
             cnf.clauses.remove(clause)
-        # print(toremove)
-        # print(cnf)
-        # print("====================")
 
     def istrue_literal(self, literal: int) -> bool:
         return not ((literal > 0) ^ (self.model[abs(literal)]))
