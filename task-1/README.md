@@ -14,7 +14,20 @@ p cnf 3 2
 2 3 -1 0 
 ```
 
-## Example Usage
+## Solving Sudoku
+To solve sudoku you can use scripts `example_sudoku.py` and `solve_sudoku.py`
+
+The function `example_sudoku.py` will visualize sudoku given in the script, attempt to solve it and visualize the solution. Usage:
+```sh
+python example_sudoku.py
+```
+
+For `solve_sudoku.py` you need to provide path to the file containing set of sudokus. Examples of such file can be found in `data/test-4x4.out` or `data/4x4.txt`.
+Example usage:
+```sh
+python solve_sudoku.py data/4x4.txt random
+```
+## Solving SAT
 
 To run the SAT solver with a CNF file:
 ```sh

@@ -2,11 +2,11 @@ import sys
 
 from src.cnf import CNFClauseSet
 from src.utils import print_sudoku
-from src.dpll_random import DPLLRandom
 from src.cdcl import CDCL
+from src.dpll_random import DPLLRandom
 from src.dpll_dlis import DPLLDLIS
 
-sys.setrecursionlimit(1000)
+sys.setrecursionlimit(5000)
 
 
 def main():

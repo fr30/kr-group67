@@ -29,25 +29,29 @@ def main():
     else:
         raise ValueError("Invalid method")
 
-    # Read formula in DIMACS format
+    # Read the sudoku file
     filename = args.filename
-    formula = []
+    sudokus = []
 
     with open(filename, "r") as f:
-        for line in f.readlines()[1:]:
-            formula.append(list(map(int, line.strip().split(" ")[:-1])))
+        for line in f.readlines():
+            sudokus.append(line.strip())
 
-    # Solve formula
-    cnf = CNFClauseSet(formula)
-    dpll = dpll_cls(cnf)
-    result = dpll.backtrack(cnf)
+    results = []
+    # Parse and solve sudoku
+    for sudoku in sudokus:
+        cnf = CNFClauseSet.from_sudoku(sudoku)
+        dpll = dpll_cls(cnf)
+        result = dpll.solve()
+        results.append(result)
 
-    if result[0]:
-        print("SAT")
-        print(result[1])
-    else:
-        print("UNSAT")
-        print({})
+    filename_noext = filename.split(".")[0]
+    with open(f"{filename_noext}.out", "w") as f:
+        for result in results:
+            if result[0]:
+                f.write(f"{result[1]}\n")
+            else:
+                f.write("UNSAT\n")
 
 
 if __name__ == "__main__":
