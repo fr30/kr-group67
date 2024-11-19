@@ -2,6 +2,7 @@ import argparse
 
 from src.cnf import CNFClauseSet
 from src.dpll_random import DPLLRandom
+from src.dpll_dlis import DPLLDLIS
 
 
 def main():
@@ -22,7 +23,7 @@ def main():
     if method == "random":
         dpll_cls = DPLLRandom
     elif method == "dlis":
-        raise NotImplementedError
+        dpll_cls = DPLLDLIS
     elif method == "cdcl":
         raise NotImplementedError
     else:
