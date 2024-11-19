@@ -12,7 +12,7 @@ class CDCL:
         self.decision_level = 0
         self.decision_stack = []
 
-    def backtrack(self) -> Tuple[bool, List[int]]:
+    def solve(self) -> Tuple[bool, List[int]]:
         """
         Main CDCL solving loop.
         Returns a tuple: (SAT/UNSAT, assignments).
@@ -46,17 +46,14 @@ class CDCL:
             elif len(unassigned) == 1:
                 # found a unit clause; propagate its literal
                 self.assignment.append(unassigned[0])
-                self.decision_stack.append(
-                    (unassigned[0], self.decision_level))
+                self.decision_stack.append((unassigned[0], self.decision_level))
         return None  # no conflicts detected
 
     def analyze_conflict(self, conflict_clause: List[int]) -> List[int]:
         """
         Analyzes a conflict and derive a learned clause.
         """
-        decision_literals = [
-            lit for lit in self.assignment if -lit in conflict_clause
-        ]
+        decision_literals = [lit for lit in self.assignment if -lit in conflict_clause]
         # simplified conflict resolution logic (expand for UIP if needed)
         learned_clause = list(
             set(conflict_clause + [-lit for lit in decision_literals])
@@ -76,7 +73,8 @@ class CDCL:
         Backtracks to the highest decision level in the learned clause.
         """
         levels = [
-            level for lit, level in self.decision_stack
+            level
+            for lit, level in self.decision_stack
             if abs(lit) in map(abs, learned_clause)
         ]
         target_level = max(levels) if levels else 0
@@ -91,9 +89,7 @@ class CDCL:
         """
         Chooses an unassigned variable and assign it a value.
         """
-        unassigned_vars = {
-            abs(lit) for clause in self.cnf.clauses for lit in clause
-        }
+        unassigned_vars = {abs(lit) for clause in self.cnf.clauses for lit in clause}
         unassigned_vars -= {abs(lit) for lit in self.assignment}
         if unassigned_vars:
             # default decision-making strategy (expand with heuristics if needed)
@@ -106,7 +102,5 @@ class CDCL:
         """
         Checks if all variables in the CNF formula are assigned.
         """
-        all_vars = {
-            abs(lit) for clause in self.cnf.clauses for lit in clause
-        }
+        all_vars = {abs(lit) for clause in self.cnf.clauses for lit in clause}
         return all_vars.issubset({abs(lit) for lit in self.assignment})
