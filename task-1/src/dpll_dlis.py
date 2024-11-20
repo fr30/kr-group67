@@ -30,8 +30,8 @@ class DPLLDLIS(DPLL):
                 if literal in available_literals:
                     # if literal does not exist yet in dictionary, assign count 0 then +1, otherwise just +1
                     literal_counts[literal] = literal_counts.get(literal, 0) + 1
-        print(literal_counts)
+        # print(literal_counts)
 
         # select literal with the highest count
-        candidate = max(literal_counts, key=literal_counts.get) 
+        candidate = max(literal_counts, key=literal_counts.get)
         return candidate
