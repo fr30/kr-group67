@@ -2,36 +2,34 @@ import random
 
 from src.cnf import CNFClauseSet
 from src.dpll import DPLL
-from src.utils import Model
+from src.utils import Model, list_diff
 
 
 class DPLLDLIS(DPLL):
     def __init__(self, init_cnf: CNFClauseSet):
         super(DPLLDLIS, self).__init__(init_cnf)
-        count_dict = dict()
-
+        literals_set = set()
         for clause in init_cnf.clauses:
             for literal in clause:
-                # check if literal has key in dictionary
-                if literal in count_dict:
-                    # if present: add +1 to value of key
-                    count_dict[literal] += 1
-                # if not: add literal as key to dictionary, value becomes 1
-                count_dict[literal] = count_dict.get(literal, 1)
-
-        # print(count_dict)
-        self.count_dict = count_dict
+                literals_set.add(abs(literal))
+        self.all_literals = list(literals_set)
 
     def choose_literal(self, cnf: CNFClauseSet, model: Model) -> int:
-        # select literal with highest count, if multiple options, then choose the first one in the dictionary
-        candidate = max(self.count_dict, key=lambda l: self.count_dict[l])
-        # print(self.count_dict, "choosing: ", candidate)
+        literal_counts = dict()
 
-        # if literal has already been assigned
-        while candidate in model:
-            # remove it from the dictionary
-            self.count_dict.pop(candidate, None)
-            # and choose the next one with the highest count
-            candidate = max(self.count_dict, key=lambda l: self.count_dict[l])
+        # calculate DLIS scores
+        for clause in cnf.clauses:
+            # skip satisfied clauses
+            if any(model.get(abs(literal)) == (literal > 0) for literal in clause):
+                continue
 
+            # count occurrence for each unassigned literal in the clause
+            for literal in clause:
+                # if literal has not been assigned
+                if abs(literal) not in model.keys():
+                    # if literal does not exist yet in dictionary, assign count 0 then +1, otherwise just +1
+                    literal_counts[literal] = literal_counts.get(literal, 0) + 1
+
+        # select literal with the highest count
+        candidate = max(literal_counts, key=literal_counts.get) 
         return candidate
