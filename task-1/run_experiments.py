@@ -12,7 +12,13 @@ NUM_RUNS = 15
 ENABLE_MULTIPROCESSING = False
 WARMUP_ROUNDS = 3
 
-test_sets = ["easy-4x4.txt", "hard-4x4.txt","easy-9x9.txt", "hard-9x9.txt","harder-9x9.txt"]
+test_sets = [
+    "easy-4x4.txt",
+    "hard-4x4.txt",
+    "easy-9x9.txt",
+    "hard-9x9.txt",
+    # "harder-9x9.txt"
+]
 
 
 def main():
