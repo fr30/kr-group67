@@ -2,9 +2,9 @@ import sys
 
 from src.cnf import CNFClauseSet
 from src.utils import print_sudoku
-from src.cdcl import CDCL
 from src.dpll_random import DPLLRandom
 from src.dpll_dlis import DPLLDLIS
+from src.dpll_jsw import DPLLDLJW
 
 sys.setrecursionlimit(5000)
 
@@ -20,9 +20,9 @@ def main():
             print()
 
     cnf = CNFClauseSet.from_sudoku(sudoku)
-    solver = DPLLRandom(cnf)
-    # solver = DPLLDLIS(cnf)
-    # solver = CDCL(cnf)
+    # solver = DPLLRandom(cnf)
+    solver = DPLLDLIS(cnf)
+    # solver = DPLLDLJW(cnf)
 
     result, model = solver.solve()
 

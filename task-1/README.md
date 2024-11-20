@@ -27,6 +27,9 @@ Example usage:
 ```sh
 python solve_sudoku.py data/4x4.txt random
 ```
+
+## Running experiments
+To run experiments and gather metrics you can run `run_experiments.py`. Make sure to edit the script to suit your needs - most important thing is to provide proper test sets filenames in the variable `test_sets` - they are expected to be in the directory `./data`. Also to speedup the computation you can change the constant `ENABLE_MULTIPROCESSING` to `True`.
 ## Solving SAT
 
 To run the SAT solver with a CNF file:

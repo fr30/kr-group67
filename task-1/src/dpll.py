@@ -1,4 +1,5 @@
 import itertools
+import time
 
 from abc import ABC, abstractmethod
 from copy import deepcopy
@@ -10,19 +11,26 @@ from src.utils import Model
 class DPLL(ABC):
     def __init__(self, init_cnf: CNFClauseSet):
         self.cnf = init_cnf
+        self.branch_count = 0
+        self.exec_time = 0
 
     def solve(self) -> Tuple[bool, Model]:
         cnf = deepcopy(self.cnf)
-        return self.backtrack(cnf, {})
+        start_time = time.time()
+        res = self.backtrack(cnf, {})
+        self.exec_time = time.time() - start_time
+        return res
 
     # Returns a model if satisfiable, None otherwise
     def backtrack(self, cnf: CNFClauseSet, model: Model) -> Tuple[bool, Model]:
         self.remove_pure_unit(cnf, model)
 
         if len(cnf) == 0:
+            self.branch_count += 1
             return True, model
 
         if any(len(clause) == 0 for clause in cnf.clauses):
+            self.branch_count += 1
             return False, None
 
         literal = self.choose_literal(cnf, model)
@@ -38,6 +46,7 @@ class DPLL(ABC):
         if right[0]:
             return True, right[1]
 
+        self.branch_count += 1
         return False, None
 
     # Remove pure literals and unit clauses
