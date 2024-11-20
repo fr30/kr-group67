@@ -15,20 +15,22 @@ class DPLLDLIS(DPLL):
         self.all_literals = list(literals_set)
 
     def choose_literal(self, cnf: CNFClauseSet, model: Model) -> int:
+        """
+        DLIS heuristic, where we count occurrences of each unassigned literal.
+        """
         literal_counts = dict()
+        # only checking literals that have not been assigned/satisfied
+        available_literals = list_diff(self.all_literals, model.keys())
 
         # calculate DLIS scores
         for clause in cnf.clauses:
-            # skip satisfied clauses
-            if any(model.get(abs(literal)) == (literal > 0) for literal in clause):
-                continue
-
             # count occurrence for each unassigned literal in the clause
             for literal in clause:
                 # if literal has not been assigned
-                if abs(literal) not in model.keys():
+                if literal in available_literals:
                     # if literal does not exist yet in dictionary, assign count 0 then +1, otherwise just +1
                     literal_counts[literal] = literal_counts.get(literal, 0) + 1
+        print(literal_counts)
 
         # select literal with the highest count
         candidate = max(literal_counts, key=literal_counts.get) 
