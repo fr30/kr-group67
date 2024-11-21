@@ -58,3 +58,18 @@ for metric in ['exec_time', 'branch_count']:
 # dlis    1.000000e+00  1.000000e+00  8.419233e-46
 # jsw     1.000000e+00  1.000000e+00  8.419233e-46
 # random  8.419233e-46  8.419233e-46  1.000000e+00
+
+    dunn_results = sp.posthoc_dunn(
+        combined_data, val_col=metric, group_col='algorithm', p_adjust='bonferroni'
+    )
+
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(dunn_results, annot=True, fmt=".3f",
+                cmap="coolwarm", cbar=True)
+    plt.title(f"Dunn's Post-Hoc Test for {metric.capitalize()} (p-values)")
+    plt.xlabel('Algorithm')
+    plt.ylabel('Algorithm')
+    output_path = f"{root}/plots/{metric}_pairwise_comp.png"
+    plt.savefig(output_path, bbox_inches='tight')
+    print(f"Saved {metric} boxplot to {output_path}")
+    plt.close()
