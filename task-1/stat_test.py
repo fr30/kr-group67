@@ -1,5 +1,7 @@
+from matplotlib import pyplot as plt
 import pandas as pd
 import scipy.stats as stats
+import seaborn as sns
 
 
 def main():
@@ -23,6 +25,9 @@ def main():
 
     file_results = run_stat_tests(combined_data, 'combined')
     all_results.extend(file_results)
+
+    plot_boxplots(
+        combined_data, '/Users/achiot/Desktop/KR/kr-group67/task-1/results/plots/')
 
     results_df = pd.DataFrame(all_results)
 
@@ -110,6 +115,29 @@ def run_stat_tests(data, file_name):
                         })
 
     return results
+
+
+def plot_boxplots(data, output_dir):
+    """
+    Plot boxplots for each metric.
+    Grouped by algorithms.
+    """
+    metrics = ['exec_time', 'branch_count']
+
+    for metric in metrics:
+        plt.figure(figsize=(10, 6))
+        sns.boxplot(x='algorithm', y=metric, data=data)
+        plt.title(f'Boxplot of {metric}')
+        plt.ylabel(metric.capitalize())
+        plt.xlabel('Algorithm')
+        plt.xticks(rotation=45)
+        plt.grid(axis='y', linestyle='--', alpha=0.7)
+
+        # Save the plot
+        output_path = f"{output_dir}{metric}_boxplot.png"
+        plt.savefig(output_path, bbox_inches='tight')
+        print(f"Saved {metric} boxplot to {output_path}")
+        plt.close()
 
 
 if __name__ == "__main__":
