@@ -38,14 +38,23 @@ for metric in ['exec_time', 'branch_count']:
     else:
         print("Fail to reject null hypothesis: No significant differences between groups.")
 
-    plt.figure(figsize=(10, 6))
-    sns.boxplot(x='algorithm', y=metric, data=combined_data)
-    plt.title(f'Boxplot of {metric} by Algorithm')
-    plt.ylabel(metric.capitalize())
-    plt.xlabel('Algorithm')
-    plt.grid(axis='y', linestyle='--', alpha=0.7)
+# results
+# === Kruskal-Wallis Test for exec_time ===
+# Kruskal-Wallis Statistic: 86.35942334032285, p-value: 1.767215416416121e-19
+# Reject null hypothesis: Significant differences between groups.
+# Performing Dunn's post-hoc test...
+# Dunn's Post-Hoc Test Results:
+#                 dlis           jsw        random
+# dlis    1.000000e+00  4.472483e-01  1.459915e-12
+# jsw     4.472483e-01  1.000000e+00  1.276498e-17
+# random  1.459915e-12  1.276498e-17  1.000000e+00
 
-    output_path = f"{root}/plots/{metric}_boxplot_2.png"
-    plt.savefig(output_path, bbox_inches='tight')
-    print(f"Saved {metric} boxplot to {output_path}")
-    plt.close()
+# === Kruskal-Wallis Test for branch_count ===
+# Kruskal-Wallis Statistic: 271.99286977346475, p-value: 8.659618711504033e-60
+# Reject null hypothesis: Significant differences between groups.
+# Performing Dunn's post-hoc test...
+# Dunn's Post-Hoc Test Results:
+#                 dlis           jsw        random
+# dlis    1.000000e+00  1.000000e+00  8.419233e-46
+# jsw     1.000000e+00  1.000000e+00  8.419233e-46
+# random  8.419233e-46  8.419233e-46  1.000000e+00
