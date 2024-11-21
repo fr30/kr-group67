@@ -1,37 +1,61 @@
-Dataset,Algorithm 1,Algorithm 2,Metric,Test,p-value,Result
-easy-4x4.csv,Random,DLIS,exec_time,Wilcoxon Signed-Rank Test,0.0017488103011328092,Significant
-easy-4x4.csv,Random,DLIS,branch_count,Paired T-Test,,Not Significant
-easy-4x4.csv,Random,JSW,exec_time,Wilcoxon Signed-Rank Test,9.891991584715068e-21,Significant
-easy-4x4.csv,Random,JSW,branch_count,Paired T-Test,,Not Significant
-easy-4x4.csv,DLIS,JSW,exec_time,Wilcoxon Signed-Rank Test,6.983782122257484e-10,Significant
-easy-4x4.csv,DLIS,JSW,branch_count,Paired T-Test,,Not Significant
-hard-4x4.csv,Random,DLIS,exec_time,Wilcoxon Signed-Rank Test,0.00219447513298469,Significant
-hard-4x4.csv,Random,DLIS,branch_count,Paired T-Test,,Not Significant
-hard-4x4.csv,Random,JSW,exec_time,Wilcoxon Signed-Rank Test,0.016338241434071255,Significant
-hard-4x4.csv,Random,JSW,branch_count,Paired T-Test,,Not Significant
-hard-4x4.csv,DLIS,JSW,exec_time,Wilcoxon Signed-Rank Test,0.597067359811315,Not Significant
-hard-4x4.csv,DLIS,JSW,branch_count,Paired T-Test,,Not Significant
-easy-9x9.csv,Random,DLIS,exec_time,Wilcoxon Signed-Rank Test,5.044310695946992e-62,Significant
-easy-9x9.csv,Random,DLIS,branch_count,Wilcoxon Signed-Rank Test,0.49803512708491726,Not Significant
-easy-9x9.csv,Random,JSW,exec_time,Wilcoxon Signed-Rank Test,2.426154876217379e-86,Significant
-easy-9x9.csv,Random,JSW,branch_count,Wilcoxon Signed-Rank Test,0.49803512708491726,Not Significant
-easy-9x9.csv,DLIS,JSW,exec_time,Wilcoxon Signed-Rank Test,0.060591527622762466,Not Significant
-easy-9x9.csv,DLIS,JSW,branch_count,Paired T-Test,,Not Significant
-hard-9x9.csv,Random,DLIS,exec_time,Wilcoxon Signed-Rank Test,1.3139123531629882e-133,Significant
-hard-9x9.csv,Random,DLIS,branch_count,Wilcoxon Signed-Rank Test,3.552660956679495e-137,Significant
-hard-9x9.csv,Random,JSW,exec_time,Wilcoxon Signed-Rank Test,2.254815561238729e-146,Significant
-hard-9x9.csv,Random,JSW,branch_count,Wilcoxon Signed-Rank Test,3.552660956679495e-137,Significant
-hard-9x9.csv,DLIS,JSW,exec_time,Wilcoxon Signed-Rank Test,1.4598160496762853e-168,Significant
-hard-9x9.csv,DLIS,JSW,branch_count,Paired T-Test,,Not Significant
-harder-9x9.csv,Random,DLIS,exec_time,Wilcoxon Signed-Rank Test,8.719073017671895e-166,Significant
-harder-9x9.csv,Random,DLIS,branch_count,Wilcoxon Signed-Rank Test,8.675244211359351e-178,Significant
-harder-9x9.csv,Random,JSW,exec_time,Wilcoxon Signed-Rank Test,4.894288771632082e-178,Significant
-harder-9x9.csv,Random,JSW,branch_count,Wilcoxon Signed-Rank Test,8.675244211359351e-178,Significant
-harder-9x9.csv,DLIS,JSW,exec_time,Wilcoxon Signed-Rank Test,1.4607496023620968e-222,Significant
-harder-9x9.csv,DLIS,JSW,branch_count,Paired T-Test,,Not Significant
-combined,Random,DLIS,exec_time,Wilcoxon Signed-Rank Test,1.9677749282576446e-137,Significant
-combined,Random,DLIS,branch_count,Wilcoxon Signed-Rank Test,0.0,Significant
-combined,Random,JSW,exec_time,Wilcoxon Signed-Rank Test,1.5458690592281211e-153,Significant
-combined,Random,JSW,branch_count,Wilcoxon Signed-Rank Test,0.0,Significant
-combined,DLIS,JSW,exec_time,Wilcoxon Signed-Rank Test,0.0,Significant
-combined,DLIS,JSW,branch_count,Paired T-Test,,Not Significant
+Dataset,Metric,Test,Statistic,p-value,Result,Algorithm 1,Algorithm 2
+easy-4x4.csv,exec_time,Kruskal-Wallis,69.63853218064429,7.554137282297619e-16,Significant,,
+easy-4x4.csv,exec_time,Dunn's Post-Hoc,,2.2694803777567829e-07,Significant,dlis,jsw
+easy-4x4.csv,exec_time,Dunn's Post-Hoc,,0.013620083178333181,Significant,dlis,random
+easy-4x4.csv,exec_time,Dunn's Post-Hoc,,2.2694803777567829e-07,Significant,jsw,dlis
+easy-4x4.csv,exec_time,Dunn's Post-Hoc,,6.355004380560425e-16,Significant,jsw,random
+easy-4x4.csv,exec_time,Dunn's Post-Hoc,,0.013620083178333181,Significant,random,dlis
+easy-4x4.csv,exec_time,Dunn's Post-Hoc,,6.355004380560425e-16,Significant,random,jsw
+easy-4x4.csv,branch_count,Kruskal-Wallis,,,"All numbers identical, test skipped",,
+hard-4x4.csv,exec_time,Kruskal-Wallis,2.874566529187968,0.23757230384570469,Not Significant,,
+hard-4x4.csv,branch_count,Kruskal-Wallis,,,"All numbers identical, test skipped",,
+easy-9x9.csv,exec_time,Kruskal-Wallis,419.2433696413981,9.171893328035988e-92,Significant,,
+easy-9x9.csv,exec_time,Dunn's Post-Hoc,,0.2787233142954822,Not Significant,dlis,jsw
+easy-9x9.csv,exec_time,Dunn's Post-Hoc,,4.2441089583294316e-63,Significant,dlis,random
+easy-9x9.csv,exec_time,Dunn's Post-Hoc,,0.2787233142954822,Not Significant,jsw,dlis
+easy-9x9.csv,exec_time,Dunn's Post-Hoc,,4.905675289590377e-76,Significant,jsw,random
+easy-9x9.csv,exec_time,Dunn's Post-Hoc,,4.2441089583294316e-63,Significant,random,dlis
+easy-9x9.csv,exec_time,Dunn's Post-Hoc,,4.905675289590377e-76,Significant,random,jsw
+easy-9x9.csv,branch_count,Kruskal-Wallis,0.0004112022553471462,0.9997944200067899,Not Significant,,
+hard-9x9.csv,exec_time,Kruskal-Wallis,925.9318728976606,8.638701964739809e-202,Significant,,
+hard-9x9.csv,exec_time,Dunn's Post-Hoc,,0.034812137400943015,Significant,dlis,jsw
+hard-9x9.csv,exec_time,Dunn's Post-Hoc,,1.8520568938232957e-137,Significant,dlis,random
+hard-9x9.csv,exec_time,Dunn's Post-Hoc,,0.034812137400943015,Significant,jsw,dlis
+hard-9x9.csv,exec_time,Dunn's Post-Hoc,,2.7513819960379835e-166,Significant,jsw,random
+hard-9x9.csv,exec_time,Dunn's Post-Hoc,,1.8520568938232957e-137,Significant,random,dlis
+hard-9x9.csv,exec_time,Dunn's Post-Hoc,,2.7513819960379835e-166,Significant,random,jsw
+hard-9x9.csv,branch_count,Kruskal-Wallis,1053.3921483702184,1.8146853839722347e-229,Significant,,
+hard-9x9.csv,branch_count,Dunn's Post-Hoc,,1.0,Not Significant,dlis,jsw
+hard-9x9.csv,branch_count,Dunn's Post-Hoc,,2.3647687170575807e-173,Significant,dlis,random
+hard-9x9.csv,branch_count,Dunn's Post-Hoc,,1.0,Not Significant,jsw,dlis
+hard-9x9.csv,branch_count,Dunn's Post-Hoc,,2.3647687170575807e-173,Significant,jsw,random
+hard-9x9.csv,branch_count,Dunn's Post-Hoc,,2.3647687170575807e-173,Significant,random,dlis
+hard-9x9.csv,branch_count,Dunn's Post-Hoc,,2.3647687170575807e-173,Significant,random,jsw
+harder-9x9.csv,exec_time,Kruskal-Wallis,1026.7726351680212,1.0943473450593411e-223,Significant,,
+harder-9x9.csv,exec_time,Dunn's Post-Hoc,,0.0017763426966893882,Significant,dlis,jsw
+harder-9x9.csv,exec_time,Dunn's Post-Hoc,,4.046344508469794e-147,Significant,dlis,random
+harder-9x9.csv,exec_time,Dunn's Post-Hoc,,0.0017763426966893882,Significant,jsw,dlis
+harder-9x9.csv,exec_time,Dunn's Post-Hoc,,2.461967213732238e-188,Significant,jsw,random
+harder-9x9.csv,exec_time,Dunn's Post-Hoc,,4.046344508469794e-147,Significant,random,dlis
+harder-9x9.csv,exec_time,Dunn's Post-Hoc,,2.461967213732238e-188,Significant,random,jsw
+harder-9x9.csv,branch_count,Kruskal-Wallis,1152.9490482763294,4.368126520507158e-251,Significant,,
+harder-9x9.csv,branch_count,Dunn's Post-Hoc,,1.0,Not Significant,dlis,jsw
+harder-9x9.csv,branch_count,Dunn's Post-Hoc,,1.381485196777229e-189,Significant,dlis,random
+harder-9x9.csv,branch_count,Dunn's Post-Hoc,,1.0,Not Significant,jsw,dlis
+harder-9x9.csv,branch_count,Dunn's Post-Hoc,,1.381485196777229e-189,Significant,jsw,random
+harder-9x9.csv,branch_count,Dunn's Post-Hoc,,1.381485196777229e-189,Significant,random,dlis
+harder-9x9.csv,branch_count,Dunn's Post-Hoc,,1.381485196777229e-189,Significant,random,jsw
+combined,exec_time,Kruskal-Wallis,86.35942334032285,1.767215416416121e-19,Significant,,
+combined,exec_time,Dunn's Post-Hoc,,0.44724830354927725,Not Significant,dlis,jsw
+combined,exec_time,Dunn's Post-Hoc,,1.4599153887496095e-12,Significant,dlis,random
+combined,exec_time,Dunn's Post-Hoc,,0.44724830354927725,Not Significant,jsw,dlis
+combined,exec_time,Dunn's Post-Hoc,,1.2764982867604863e-17,Significant,jsw,random
+combined,exec_time,Dunn's Post-Hoc,,1.4599153887496095e-12,Significant,random,dlis
+combined,exec_time,Dunn's Post-Hoc,,1.2764982867604863e-17,Significant,random,jsw
+combined,branch_count,Kruskal-Wallis,271.99286977346475,8.659618711504033e-60,Significant,,
+combined,branch_count,Dunn's Post-Hoc,,1.0,Not Significant,dlis,jsw
+combined,branch_count,Dunn's Post-Hoc,,8.419233087045475e-46,Significant,dlis,random
+combined,branch_count,Dunn's Post-Hoc,,1.0,Not Significant,jsw,dlis
+combined,branch_count,Dunn's Post-Hoc,,8.419233087045475e-46,Significant,jsw,random
+combined,branch_count,Dunn's Post-Hoc,,8.419233087045475e-46,Significant,random,dlis
+combined,branch_count,Dunn's Post-Hoc,,8.419233087045475e-46,Significant,random,jsw
