@@ -29,11 +29,11 @@ def main():
     plot_boxplots(
         combined_data, '/Users/achiot/Desktop/KR/kr-group67/task-1/results/plots/')
 
-    results_df = pd.DataFrame(all_results)
+    # results_df = pd.DataFrame(all_results)
 
-    output_path = root + 'stat_test_results.csv'
-    results_df.to_csv(output_path, index=False)
-    print(f"Results saved to {output_path}")
+    # output_path = root + 'stat_test_results.csv'
+    # results_df.to_csv(output_path, index=False)
+    # print(f"Results saved to {output_path}")
 
 
 def run_stat_tests(data, file_name):
@@ -119,24 +119,25 @@ def run_stat_tests(data, file_name):
 
 def plot_boxplots(data, output_dir):
     """
-    Plot boxplots for each metric.
+    Plot boxplots for each metric without outliers.
     Grouped by algorithms.
     """
     metrics = ['exec_time', 'branch_count']
 
     for metric in metrics:
         plt.figure(figsize=(10, 6))
-        sns.boxplot(x='algorithm', y=metric, data=data)
-        plt.title(f'Boxplot of {metric}')
+        sns.boxplot(x='algorithm', y=metric, data=data,
+                    showfliers=False)  # Hides outliers
+        plt.title(f'Boxplot of {metric} (Without Outliers)')
         plt.ylabel(metric.capitalize())
         plt.xlabel('Algorithm')
         plt.xticks(rotation=45)
         plt.grid(axis='y', linestyle='--', alpha=0.7)
 
         # Save the plot
-        output_path = f"{output_dir}{metric}_boxplot.png"
+        output_path = f"{output_dir}{metric}_boxplot_no_outliers.png"
         plt.savefig(output_path, bbox_inches='tight')
-        print(f"Saved {metric} boxplot to {output_path}")
+        print(f"Saved {metric} boxplot (no outliers) to {output_path}")
         plt.close()
 
 

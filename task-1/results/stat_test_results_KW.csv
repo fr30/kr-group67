@@ -1,0 +1,13 @@
+Dataset,Metric,Test,Statistic,p-value,Result
+easy-4x4.csv,exec_time,Kruskal-Wallis,69.63853218064429,7.554137282297619e-16,Significant
+easy-4x4.csv,branch_count,Kruskal-Wallis,,,"All numbers identical, test skipped"
+hard-4x4.csv,exec_time,Kruskal-Wallis,2.874566529187968,0.23757230384570469,Not Significant
+hard-4x4.csv,branch_count,Kruskal-Wallis,,,"All numbers identical, test skipped"
+easy-9x9.csv,exec_time,Kruskal-Wallis,419.2433696413981,9.171893328035988e-92,Significant
+easy-9x9.csv,branch_count,Kruskal-Wallis,0.0004112022553471462,0.9997944200067899,Not Significant
+hard-9x9.csv,exec_time,Kruskal-Wallis,925.9318728976606,8.638701964739809e-202,Significant
+hard-9x9.csv,branch_count,Kruskal-Wallis,1053.3921483702184,1.8146853839722347e-229,Significant
+harder-9x9.csv,exec_time,Kruskal-Wallis,1026.7726351680212,1.0943473450593411e-223,Significant
+harder-9x9.csv,branch_count,Kruskal-Wallis,1152.9490482763294,4.368126520507158e-251,Significant
+combined,exec_time,Kruskal-Wallis,86.35942334032285,1.767215416416121e-19,Significant
+combined,branch_count,Kruskal-Wallis,271.99286977346475,8.659618711504033e-60,Significant
