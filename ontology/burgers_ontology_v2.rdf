@@ -1,0 +1,909 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/amari/ontologies/2024/11/burgers/"
+     xml:base="http://www.semanticweb.org/amari/ontologies/2024/11/burgers/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers">
+        <rdfs:comment xml:lang="en">This is an ontology about burgers.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_ingredrient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_bun_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_ingredrient -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_ingredrient">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_ingredient_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_ingredrient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_patty_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_ingredrient"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_topping_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+        <rdfs:comment xml:lang="en">has_topping is the inverse of is_topping_of (which is inferred by the HermiT reasoner)</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_bun_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_bun_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_ingredient_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_ingredient_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_ingredient_of">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_itself -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_itself">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ReflexiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_patty_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_patty_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_ingredient_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_topping_of -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_topping_of">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#is_ingredient_of"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#BBQ_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#BBQ_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#BBQ_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Bacon_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheddar_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">BBQ burger with either beef or chicken patty, some BBQ sauce, bacon and cheese.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#BBQ_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#BBQ_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Bacon_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Bacon_Burger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Bacon_Topping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Burger with some bacon on it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Bacon_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Bacon_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Boring_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Boring_Burger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:comment xml:lang="en">Burger with plain white bun and no sauce.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun"/>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheap_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheap_Burger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:comment xml:lang="en">Cheap burgers have a beef or chicken bun and max 3 sauces.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheddar_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheddar_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheeseburger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheeseburger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Burger with cheese on it.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Burger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:comment xml:lang="en">Burger with chicken patty.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Classic_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Classic_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Pickles_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Tomato_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Beef burger with tomato, pickles, lettuce and not more than 2 sauces. Also has the sesame bun.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Eggplant_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Eggplant_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fish_Patty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fish_Patty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fishburger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fishburger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fish_Patty"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Burger with fish patty.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Jalapenos_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Jalapenos_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Ketchup_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Ketchup_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mayo_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mayo_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#McFish_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#McFish_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fish_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Burger with fish patty, some vegetables and a white bun.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#MeatVeggieFusion_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#MeatVeggieFusion_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Burger with Veggie patty and meat topping. This is not a vegetarian burger, which should be inferred by the reasoner.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mustard_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mustard_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:comment xml:lang="en">Burgers that are on the menu.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#NonVeggieburger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#NonVeggieburger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggieburger"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment>Non-vegetarian burger</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Onion_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Onion_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Pickles_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Pickles_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SimpleChicken_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SimpleChicken_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Chicken burger without sauce, a plain bun and a chicken patty.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SpicyBeef_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SpicyBeef_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Jalapenos_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Burger with beef patty, sesame bun and spicy vegetables or sauce.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Spicy_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Spicy_Burger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Spicy_Topping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Burger with spicy ingredients.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Spicy_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Spicy_Topping">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Jalapenos_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Tomato_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Tomato_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetarian_Topping -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetarian_Topping">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#VeggieDelight_Burger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#VeggieDelight_Burger">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Named_Burger"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Eggplant_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Jalapenos_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Onion_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Pickles_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Tomato_Topping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Burger for vegetarians, with any of the vegetable toppings (or none) and maximum of 3 sauces (of which 1 is sambal).</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggieburger -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggieburger">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:comment xml:lang="en">Burger for vegetarians. Check if it infers no meat topping.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#BBQ_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Ketchup_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mayo_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mustard_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Beef_Patty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Chicken_Patty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fish_Patty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Bun"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Patty"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Eggplant_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Jalapenos_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Onion_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Pickles_Topping"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Tomato_Topping"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
