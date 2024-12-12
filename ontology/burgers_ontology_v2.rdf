@@ -162,7 +162,9 @@
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">BBQ burger with either beef or chicken patty, some BBQ sauce, bacon and cheese.</rdfs:comment>
+        <rdfs:comment xml:lang="en">BBQ burger with either beef or chicken patty, some BBQ sauce, bacon and cheddar cheese.
+
+There can be other things on it as well.</rdfs:comment>
     </owl:Class>
     
 
@@ -189,7 +191,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">Burger with some bacon on it.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with some bacon on it.
+
+There can be other things on the burger, as long as there is some bacon on it, it&apos;s a bacon burger.</rdfs:comment>
     </owl:Class>
     
 
@@ -233,7 +237,9 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
-        <rdfs:comment xml:lang="en">Burger with plain white bun and no sauce.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with a plain white bun and no sauce.
+
+There can be other toppings on it.</rdfs:comment>
     </owl:Class>
     
 
@@ -283,6 +289,14 @@
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Class>
+                        <owl:complementOf>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Meat_Topping"/>
+                            </owl:Restriction>
+                        </owl:complementOf>
+                    </owl:Class>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
                         <owl:someValuesFrom>
@@ -296,14 +310,19 @@
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
-                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
                         <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
-        <rdfs:comment xml:lang="en">Cheap burgers have a beef or chicken bun and max 3 sauces.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Cheap burgers have a beef or chicken patty, max 2 sauces, no meat toppings, max 3 vegetables. Can contain anything else.</rdfs:comment>
     </owl:Class>
     
 
@@ -338,7 +357,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">Burger with cheese on it.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with some cheese on it.
+
+There can be other things on the burger, as long as there is some cheese on it, it&apos;s a cheeseburger.</rdfs:comment>
     </owl:Class>
     
 
@@ -358,7 +379,9 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
-        <rdfs:comment xml:lang="en">Burger with chicken patty.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with a chicken patty.
+
+Burger has exactly 1 patty according to the superclass Burger definition, which for the chicken burger is the chicken patty. Anything else can be on it, as long as the patty is chicken, it&apos;s a chicken burger.</rdfs:comment>
     </owl:Class>
     
 
@@ -408,11 +431,29 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Pickles_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Tomato_Topping"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:maxQualifiedCardinality>
                 <owl:onClass rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sauce_Topping"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Beef burger with tomato, pickles, lettuce and not more than 2 sauces. Also has the sesame bun.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Beef burger with tomato, pickles, lettuce and not more than 2 sauces. Also has the sesame bun.
+
+Used closure axiom here.
+Can only have 1 bun which is defined as SesameSeed_bun. Can only have 1 patty which is defined as Beef_Patty. For the toppings we have a explicit closure axiom.</rdfs:comment>
     </owl:Class>
     
 
@@ -447,7 +488,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">Burger with fish patty.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with a fish patty.
+
+Burger has exactly 1 patty according to the superclass Burger definition, which for the fish burger is the fish patty. Anything else can be on it, as long as the patty is fish, it&apos;s a fish burger.</rdfs:comment>
     </owl:Class>
     
 
@@ -506,7 +549,27 @@
                 <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">Burger with fish patty, some vegetables and a white bun.</rdfs:comment>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Fish_Patty"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Vegetable_Topping"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">Burger with fish patty, some vegetables and a white bun. Nothing else. Closure axiom used in combination with existential restrictions.
+
+Because it is restricted to those 3 elements, the reasoner should infer this is a boring burger (no sauce). As well as a fish burger of course.</rdfs:comment>
     </owl:Class>
     
 
@@ -570,7 +633,8 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment>Non-vegetarian burger</rdfs:comment>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggieburger"/>
+        <rdfs:comment xml:lang="en">Non-vegetarian burger. Disjoint with Veggieburger.</rdfs:comment>
     </owl:Class>
     
 
@@ -704,7 +768,9 @@
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">Burger with spicy ingredients.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with at least 1 spicy ingredient. 
+
+Anything else can be on it.</rdfs:comment>
     </owl:Class>
     
 
@@ -726,6 +792,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+        <rdfs:comment xml:lang="en">Contains Jalapenos topping or Sambal topping.</rdfs:comment>
     </owl:Class>
     
 
@@ -760,6 +827,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger_Topping"/>
+        <rdfs:comment xml:lang="en">Contains any Burger_Topping that is not a subclass of Meat_Topping.</rdfs:comment>
     </owl:Class>
     
 
@@ -835,12 +903,76 @@
                     </owl:Class>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
                         <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">Burger for vegetarians. Check if it infers no meat topping.</rdfs:comment>
+        <rdfs:comment xml:lang="en">Any burger with a veggie patty (and thus no other patties due to the definition of Burger being exactly 1 Burger_Patty + the closure axiom used here) and NO Meat_Topping.
+
+Disjoint with NonVeggieburger.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mayo_Topping"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test2 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test2">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
+        <rdfs:comment xml:lang="en">Dummy class to see if the reasoner returns bottom for multiple buns.</rdfs:comment>
     </owl:Class>
     
 
