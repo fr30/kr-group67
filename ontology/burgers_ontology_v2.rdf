@@ -919,64 +919,6 @@ Disjoint with NonVeggieburger.</rdfs:comment>
     
 
 
-    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_patty"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Veggie_Patty"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Cheese_Topping"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Lettuce_Topping"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Mayo_Topping"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_topping"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Sambal_Topping"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-    </owl:Class>
-    
-
-
-    <!-- http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test2 -->
-
-    <owl:Class rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#test2">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#PlainWhite_Bun"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#has_bun"/>
-                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#SesameSeed_Bun"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/amari/ontologies/2024/11/burgers#Burger"/>
-        <rdfs:comment xml:lang="en">Dummy class to see if the reasoner returns bottom for multiple buns.</rdfs:comment>
-    </owl:Class>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
